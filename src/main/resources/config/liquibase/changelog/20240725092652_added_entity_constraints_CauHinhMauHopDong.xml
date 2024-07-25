@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity CauHinhMauHopDong.
+    -->
+    <changeSet id="20240725092652-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="id_loaihd_id"
+                                 baseTableName="cau_hinh_mau_hop_dong"
+                                 constraintName="fk_cau_hinh_mau_hop_dong__id_loaihd_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="danh_muc_loai_hop_dong"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="id_phan_loaihd_id"
+                                 baseTableName="cau_hinh_mau_hop_dong"
+                                 constraintName="fk_cau_hinh_mau_hop_dong__id_phan_loaihd_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="phan_loai_hop_dong"
+                                 />
+    </changeSet>
+</databaseChangeLog>

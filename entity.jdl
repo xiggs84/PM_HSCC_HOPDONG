@@ -1,0 +1,176 @@
+entity LoaiHopDongCongChung {
+    idLoaiHopDongCongChung Long
+    dienGiai String
+    giaTri Long
+    trangThai Long
+}
+
+entity CauHinhHopDong {
+    idLoaiHopDong Long
+    idDonVi Long
+    chieuDai Long
+    tienTo String
+    giaTri Long
+    hienThi String
+    trangThai Long
+}
+
+entity CauHinhMauHopDong {
+    idLoaiHd Long
+    dienGiai String
+    idVaiTro1 Long
+    idVaiTro2 Long
+    fileHopDong String
+    srcHopDong String
+    dieuKhoan String
+    idDonVi Long
+    trangThai Long
+    ngayThaoTac LocalDate
+    nguoiThaoTac Long
+    srcLoiChung String
+    idNhom Long
+    fileLoiChung String
+    chuyenTaiSan Long
+    loaiSuaDoi Long
+    loaiHuyBo Long
+    trangThaiDuyet Long
+    idPhanLoaiHopDong Long
+    srcCv String
+    srcTb String
+    srcTtpc String
+    idVaiTro3 Long
+}
+
+entity DanhMucLoaiHopDong {
+    idLoaiHd Long
+    dienGiai String
+    idVaiTro1 Long
+    idVaiTro2 Long
+    fileHopDong String
+    srcHopDong String
+    dieuKhoan String
+    idDonVi Long
+    trangThai Long
+    ngayThaoTac LocalDate
+    nguoiThaoTac Long
+    srcLoiChung String
+    idNhom Long
+    fileLoiChung String
+    chuyenTaiSan Long
+    loaiSuaDoi Long
+    loaiHuyBo Long
+    trangThaiDuyet Long
+    idPhanLoaiHopDong Long
+    srcCv String
+    srcTb String
+    srcTtpc String
+    dgTen String
+    nhomTen Long
+    idVaiTro3 Long
+}
+
+entity DanhMucNhomHopDong {
+    idNhom Long
+    dienGiai String
+}
+
+entity DanhSachHopDong {
+    ngayLapHd LocalDate
+    nguoiLapHd Long
+    trangThai Long
+    idLoaiHd Long
+    idDonVi Long
+    ngayThaoTac LocalDate
+    nguoiThaoTac Long
+    srcHopDong String
+    soCongChung String
+    congChungVien Long
+    soTienRutTrich Long
+    hdThuCong Long
+    trangThaiRutTrich Long
+    chuKyNgoaiTruSo Long
+    strSearch String
+    ngayText String
+    ngayRutTrichText String
+    ngayThaoTacRutTrich LocalDate
+    thuLaoCongChung Long
+    quyenLaiSt String
+    soLaiSt String
+    quyenLaiTl String
+    soLaiTl String
+    srcKySoPdf String
+    srcKySoPdfSigned String
+}
+
+entity PhanLoaiHopDong {
+    idPhanLoaiHopDong Long
+    dienGiai String
+}
+
+entity ThongTinChungHopDong {
+    ngayLapHd LocalDate
+    nguoiLapHd Long
+    thongTinVanBan String
+    trangThai Long
+    idLoaiHd Long
+    dieuKhoanHd String
+    idDonVi Long
+    ngayThaoTac LocalDate
+    nguoiThaoTac Long
+    idHdGoc Long
+    maHopDong String
+    srcHopDong String
+    ngayHen LocalDate
+    soCongChung Long
+    congChungVien Long
+    ngayKyHd LocalDate
+    nguoiRutTrich Long
+    soTienRutTrich Long
+    ngayRutTrich LocalDate
+    hdThuCong Long
+    trangThaiRutTrich Long
+    chuKyNgoaiTruSo Long
+    strSearch String
+    idMaster Long
+    idHdSdHb Long
+    srcDmMaster String
+    repRefUnique Long
+    ngayText String
+    thongTinChung String
+    thongTinChungClob String
+}
+
+entity DanhMucLoaiVanBan {
+    idLoaiVb Long
+    dienGiai String
+    idLoaiHopDong Long
+}
+
+entity SoCongChung {
+    ngayThaoTac LocalDate
+    idSo Long
+    idDonVi Long
+    tenSo String
+    giaTri Long
+    nguoiThaoTac Long
+    trangThai Long
+    idLoaiSo Long
+}
+
+entity DanhMucLoaiSoCongChung {
+    idLoai Long
+    tenLoai String
+    trangThai Long
+}
+
+//relationship OneToMany {
+//    DanhMucLoaiHopDong to CauHinhMauHopDong{idLoaiHD},
+//    PhanLoaiHopDong to CauHinhMauHopDong{idPhanLoaiHD},
+//    DanhMucLoaiHopDong to ThongTinChungHopDong{idLoaiHD},
+//    SoCongChung to ThongTinChungHopDong{idSoCongChung},
+//    SoCongChung to DanhSachHopDong{idSoCongChung}
+//}
+
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct

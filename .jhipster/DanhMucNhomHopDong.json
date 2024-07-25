@@ -1,8 +1,8 @@
 {
   "annotations": {
-    "changelogDate": "20240717021013"
+    "changelogDate": "20240725093217"
   },
-  "applications": ["gateway", "HopDong"],
+  "applications": "*",
   "clientRootFolder": "HopDong",
   "databaseType": "sql",
   "dto": "mapstruct",
@@ -16,11 +16,10 @@
       "fieldType": "String"
     }
   ],
-  "jpaMetamodelFiltering": true,
   "microserviceName": "HopDong",
   "name": "DanhMucNhomHopDong",
+  "pagination": "pagination",
   "relationships": [],
   "searchEngine": "no",
-  "service": "serviceImpl",
-  "skipServer": true
+  "service": "serviceClass"
 }

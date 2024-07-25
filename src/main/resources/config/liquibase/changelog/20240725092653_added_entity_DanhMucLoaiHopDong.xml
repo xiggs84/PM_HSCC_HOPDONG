@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity DanhMucLoaiHopDong.
+    -->
+    <changeSet id="20240725092653-1" author="jhipster">
+        <createTable tableName="danh_muc_loai_hop_dong">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_loai_hd" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="dien_giai" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_vai_tro_1" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_vai_tro_2" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="file_hop_dong" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="src_hop_dong" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dieu_khoan" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_don_vi" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="trang_thai" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="ngay_thao_tac" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="nguoi_thao_tac" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="src_loi_chung" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_nhom" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="file_loi_chung" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="chuyen_tai_san" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="loai_sua_doi" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="loai_huy_bo" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="trang_thai_duyet" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_phan_loai_hop_dong" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="src_cv" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="src_tb" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="src_ttpc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dg_ten" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nhom_ten" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_vai_tro_3" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240725092653-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/danh_muc_loai_hop_dong.csv"
+                  separator=";"
+                  tableName="danh_muc_loai_hop_dong"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="id_loai_hd" type="numeric"/>
+            <column name="dien_giai" type="string"/>
+            <column name="id_vai_tro_1" type="numeric"/>
+            <column name="id_vai_tro_2" type="numeric"/>
+            <column name="file_hop_dong" type="string"/>
+            <column name="src_hop_dong" type="string"/>
+            <column name="dieu_khoan" type="string"/>
+            <column name="id_don_vi" type="numeric"/>
+            <column name="trang_thai" type="numeric"/>
+            <column name="ngay_thao_tac" type="date"/>
+            <column name="nguoi_thao_tac" type="numeric"/>
+            <column name="src_loi_chung" type="string"/>
+            <column name="id_nhom" type="numeric"/>
+            <column name="file_loi_chung" type="string"/>
+            <column name="chuyen_tai_san" type="numeric"/>
+            <column name="loai_sua_doi" type="numeric"/>
+            <column name="loai_huy_bo" type="numeric"/>
+            <column name="trang_thai_duyet" type="numeric"/>
+            <column name="id_phan_loai_hop_dong" type="numeric"/>
+            <column name="src_cv" type="string"/>
+            <column name="src_tb" type="string"/>
+            <column name="src_ttpc" type="string"/>
+            <column name="dg_ten" type="string"/>
+            <column name="nhom_ten" type="numeric"/>
+            <column name="id_vai_tro_3" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

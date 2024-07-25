@@ -1,8 +1,8 @@
 {
   "annotations": {
-    "changelogDate": "20240717021613"
+    "changelogDate": "20240725093223"
   },
-  "applications": ["gateway", "HopDong"],
+  "applications": "*",
   "clientRootFolder": "HopDong",
   "databaseType": "sql",
   "dto": "mapstruct",
@@ -40,33 +40,10 @@
       "fieldType": "Long"
     }
   ],
-  "jpaMetamodelFiltering": true,
   "microserviceName": "HopDong",
   "name": "SoCongChung",
-  "relationships": [
-    {
-      "otherEntityName": "hopDongCongChung",
-      "otherEntityRelationshipName": "idSoCongChung",
-      "relationshipName": "hopDongCongChung",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    },
-    {
-      "otherEntityName": "thongTinChungHopDong",
-      "otherEntityRelationshipName": "idSoCongChung",
-      "relationshipName": "thongTinChungHopDong",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    },
-    {
-      "otherEntityName": "danhSachHopDong",
-      "otherEntityRelationshipName": "idSoCongChung",
-      "relationshipName": "danhSachHopDong",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    }
-  ],
+  "pagination": "pagination",
+  "relationships": [],
   "searchEngine": "no",
-  "service": "serviceImpl",
-  "skipServer": true
+  "service": "serviceClass"
 }
