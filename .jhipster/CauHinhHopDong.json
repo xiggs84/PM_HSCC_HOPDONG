@@ -24,6 +24,14 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "phuongThucThanhToan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thongTinThem",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "giaTri",
       "fieldType": "Long"
     },

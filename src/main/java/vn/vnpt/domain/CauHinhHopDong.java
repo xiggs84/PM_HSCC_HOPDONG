@@ -34,6 +34,12 @@ public class CauHinhHopDong implements Serializable {
     @Column(name = "tien_to")
     private String tienTo;
 
+    @Column(name = "phuong_thuc_thanh_toan")
+    private String phuongThucThanhToan;
+
+    @Column(name = "thong_tin_them")
+    private String thongTinThem;
+
     @Column(name = "gia_tri")
     private Long giaTri;
 
@@ -110,6 +116,32 @@ public class CauHinhHopDong implements Serializable {
         this.tienTo = tienTo;
     }
 
+    public String getPhuongThucThanhToan() {
+        return this.phuongThucThanhToan;
+    }
+
+    public CauHinhHopDong phuongThucThanhToan(String phuongThucThanhToan) {
+        this.setPhuongThucThanhToan(phuongThucThanhToan);
+        return this;
+    }
+
+    public void setPhuongThucThanhToan(String phuongThucThanhToan) {
+        this.phuongThucThanhToan = phuongThucThanhToan;
+    }
+
+    public String getThongTinThem() {
+        return this.thongTinThem;
+    }
+
+    public CauHinhHopDong thongTinThem(String thongTinThem) {
+        this.setThongTinThem(thongTinThem);
+        return this;
+    }
+
+    public void setThongTinThem(String thongTinThem) {
+        this.thongTinThem = thongTinThem;
+    }
+
     public Long getGiaTri() {
         return this.giaTri;
     }
@@ -177,6 +209,8 @@ public class CauHinhHopDong implements Serializable {
             ", idDonVi=" + getIdDonVi() +
             ", chieuDai=" + getChieuDai() +
             ", tienTo='" + getTienTo() + "'" +
+            ", phuongThucThanhToan='" + getPhuongThucThanhToan() + "'" +
+            ", thongTinThem='" + getThongTinThem() + "'" +
             ", giaTri=" + getGiaTri() +
             ", hienThi='" + getHienThi() + "'" +
             ", trangThai=" + getTrangThai() +

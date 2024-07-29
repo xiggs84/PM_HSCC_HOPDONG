@@ -10,6 +10,8 @@ entity CauHinhHopDong {
     idDonVi Long
     chieuDai Long
     tienTo String
+    phuongThucThanhToan String
+    thongTinThem String
     giaTri Long
     hienThi String
     trangThai Long

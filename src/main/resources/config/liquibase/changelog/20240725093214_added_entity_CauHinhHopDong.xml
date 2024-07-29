@@ -26,6 +26,12 @@
             <column name="tien_to" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="phuong_thuc_thanh_toan" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="thong_tin_them" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="gia_tri" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -60,6 +66,8 @@
             <column name="id_don_vi" type="numeric"/>
             <column name="chieu_dai" type="numeric"/>
             <column name="tien_to" type="string"/>
+            <column name="phuong_thuc_thanh_toan" type="string"/>
+            <column name="thong_tin_them" type="string"/>
             <column name="gia_tri" type="numeric"/>
             <column name="hien_thi" type="string"/>
             <column name="trang_thai" type="numeric"/>

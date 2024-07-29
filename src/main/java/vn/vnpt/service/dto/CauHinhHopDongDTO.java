@@ -19,6 +19,10 @@ public class CauHinhHopDongDTO implements Serializable {
 
     private String tienTo;
 
+    private String phuongThucThanhToan;
+
+    private String thongTinThem;
+
     private Long giaTri;
 
     private String hienThi;
@@ -63,6 +67,22 @@ public class CauHinhHopDongDTO implements Serializable {
 
     public void setTienTo(String tienTo) {
         this.tienTo = tienTo;
+    }
+
+    public String getPhuongThucThanhToan() {
+        return phuongThucThanhToan;
+    }
+
+    public void setPhuongThucThanhToan(String phuongThucThanhToan) {
+        this.phuongThucThanhToan = phuongThucThanhToan;
+    }
+
+    public String getThongTinThem() {
+        return thongTinThem;
+    }
+
+    public void setThongTinThem(String thongTinThem) {
+        this.thongTinThem = thongTinThem;
     }
 
     public Long getGiaTri() {
@@ -119,6 +139,8 @@ public class CauHinhHopDongDTO implements Serializable {
             ", idDonVi=" + getIdDonVi() +
             ", chieuDai=" + getChieuDai() +
             ", tienTo='" + getTienTo() + "'" +
+            ", phuongThucThanhToan='" + getPhuongThucThanhToan() + "'" +
+            ", thongTinThem='" + getThongTinThem() + "'" +
             ", giaTri=" + getGiaTri() +
             ", hienThi='" + getHienThi() + "'" +
             ", trangThai=" + getTrangThai() +

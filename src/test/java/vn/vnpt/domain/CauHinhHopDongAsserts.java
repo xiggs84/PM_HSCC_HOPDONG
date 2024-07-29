@@ -51,6 +51,10 @@ public class CauHinhHopDongAsserts {
             .satisfies(e -> assertThat(e.getIdDonVi()).as("check idDonVi").isEqualTo(actual.getIdDonVi()))
             .satisfies(e -> assertThat(e.getChieuDai()).as("check chieuDai").isEqualTo(actual.getChieuDai()))
             .satisfies(e -> assertThat(e.getTienTo()).as("check tienTo").isEqualTo(actual.getTienTo()))
+            .satisfies(
+                e -> assertThat(e.getPhuongThucThanhToan()).as("check phuongThucThanhToan").isEqualTo(actual.getPhuongThucThanhToan())
+            )
+            .satisfies(e -> assertThat(e.getThongTinThem()).as("check thongTinThem").isEqualTo(actual.getThongTinThem()))
             .satisfies(e -> assertThat(e.getGiaTri()).as("check giaTri").isEqualTo(actual.getGiaTri()))
             .satisfies(e -> assertThat(e.getHienThi()).as("check hienThi").isEqualTo(actual.getHienThi()))
             .satisfies(e -> assertThat(e.getTrangThai()).as("check trangThai").isEqualTo(actual.getTrangThai()));

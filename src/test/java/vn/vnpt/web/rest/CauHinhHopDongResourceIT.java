@@ -46,6 +46,12 @@ class CauHinhHopDongResourceIT {
     private static final String DEFAULT_TIEN_TO = "AAAAAAAAAA";
     private static final String UPDATED_TIEN_TO = "BBBBBBBBBB";
 
+    private static final String DEFAULT_PHUONG_THUC_THANH_TOAN = "AAAAAAAAAA";
+    private static final String UPDATED_PHUONG_THUC_THANH_TOAN = "BBBBBBBBBB";
+
+    private static final String DEFAULT_THONG_TIN_THEM = "AAAAAAAAAA";
+    private static final String UPDATED_THONG_TIN_THEM = "BBBBBBBBBB";
+
     private static final Long DEFAULT_GIA_TRI = 1L;
     private static final Long UPDATED_GIA_TRI = 2L;
 
@@ -92,6 +98,8 @@ class CauHinhHopDongResourceIT {
             .idDonVi(DEFAULT_ID_DON_VI)
             .chieuDai(DEFAULT_CHIEU_DAI)
             .tienTo(DEFAULT_TIEN_TO)
+            .phuongThucThanhToan(DEFAULT_PHUONG_THUC_THANH_TOAN)
+            .thongTinThem(DEFAULT_THONG_TIN_THEM)
             .giaTri(DEFAULT_GIA_TRI)
             .hienThi(DEFAULT_HIEN_THI)
             .trangThai(DEFAULT_TRANG_THAI);
@@ -110,6 +118,8 @@ class CauHinhHopDongResourceIT {
             .idDonVi(UPDATED_ID_DON_VI)
             .chieuDai(UPDATED_CHIEU_DAI)
             .tienTo(UPDATED_TIEN_TO)
+            .phuongThucThanhToan(UPDATED_PHUONG_THUC_THANH_TOAN)
+            .thongTinThem(UPDATED_THONG_TIN_THEM)
             .giaTri(UPDATED_GIA_TRI)
             .hienThi(UPDATED_HIEN_THI)
             .trangThai(UPDATED_TRANG_THAI);
@@ -187,6 +197,8 @@ class CauHinhHopDongResourceIT {
             .andExpect(jsonPath("$.[*].idDonVi").value(hasItem(DEFAULT_ID_DON_VI.intValue())))
             .andExpect(jsonPath("$.[*].chieuDai").value(hasItem(DEFAULT_CHIEU_DAI.intValue())))
             .andExpect(jsonPath("$.[*].tienTo").value(hasItem(DEFAULT_TIEN_TO)))
+            .andExpect(jsonPath("$.[*].phuongThucThanhToan").value(hasItem(DEFAULT_PHUONG_THUC_THANH_TOAN)))
+            .andExpect(jsonPath("$.[*].thongTinThem").value(hasItem(DEFAULT_THONG_TIN_THEM)))
             .andExpect(jsonPath("$.[*].giaTri").value(hasItem(DEFAULT_GIA_TRI.intValue())))
             .andExpect(jsonPath("$.[*].hienThi").value(hasItem(DEFAULT_HIEN_THI)))
             .andExpect(jsonPath("$.[*].trangThai").value(hasItem(DEFAULT_TRANG_THAI.intValue())));
@@ -208,6 +220,8 @@ class CauHinhHopDongResourceIT {
             .andExpect(jsonPath("$.idDonVi").value(DEFAULT_ID_DON_VI.intValue()))
             .andExpect(jsonPath("$.chieuDai").value(DEFAULT_CHIEU_DAI.intValue()))
             .andExpect(jsonPath("$.tienTo").value(DEFAULT_TIEN_TO))
+            .andExpect(jsonPath("$.phuongThucThanhToan").value(DEFAULT_PHUONG_THUC_THANH_TOAN))
+            .andExpect(jsonPath("$.thongTinThem").value(DEFAULT_THONG_TIN_THEM))
             .andExpect(jsonPath("$.giaTri").value(DEFAULT_GIA_TRI.intValue()))
             .andExpect(jsonPath("$.hienThi").value(DEFAULT_HIEN_THI))
             .andExpect(jsonPath("$.trangThai").value(DEFAULT_TRANG_THAI.intValue()));
@@ -237,6 +251,8 @@ class CauHinhHopDongResourceIT {
             .idDonVi(UPDATED_ID_DON_VI)
             .chieuDai(UPDATED_CHIEU_DAI)
             .tienTo(UPDATED_TIEN_TO)
+            .phuongThucThanhToan(UPDATED_PHUONG_THUC_THANH_TOAN)
+            .thongTinThem(UPDATED_THONG_TIN_THEM)
             .giaTri(UPDATED_GIA_TRI)
             .hienThi(UPDATED_HIEN_THI)
             .trangThai(UPDATED_TRANG_THAI);
@@ -329,7 +345,11 @@ class CauHinhHopDongResourceIT {
         CauHinhHopDong partialUpdatedCauHinhHopDong = new CauHinhHopDong();
         partialUpdatedCauHinhHopDong.setId(cauHinhHopDong.getId());
 
-        partialUpdatedCauHinhHopDong.idLoaiHopDong(UPDATED_ID_LOAI_HOP_DONG).idDonVi(UPDATED_ID_DON_VI).chieuDai(UPDATED_CHIEU_DAI);
+        partialUpdatedCauHinhHopDong
+            .idLoaiHopDong(UPDATED_ID_LOAI_HOP_DONG)
+            .idDonVi(UPDATED_ID_DON_VI)
+            .chieuDai(UPDATED_CHIEU_DAI)
+            .trangThai(UPDATED_TRANG_THAI);
 
         restCauHinhHopDongMockMvc
             .perform(
@@ -365,6 +385,8 @@ class CauHinhHopDongResourceIT {
             .idDonVi(UPDATED_ID_DON_VI)
             .chieuDai(UPDATED_CHIEU_DAI)
             .tienTo(UPDATED_TIEN_TO)
+            .phuongThucThanhToan(UPDATED_PHUONG_THUC_THANH_TOAN)
+            .thongTinThem(UPDATED_THONG_TIN_THEM)
             .giaTri(UPDATED_GIA_TRI)
             .hienThi(UPDATED_HIEN_THI)
             .trangThai(UPDATED_TRANG_THAI);

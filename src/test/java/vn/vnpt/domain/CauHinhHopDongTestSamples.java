@@ -16,6 +16,8 @@ public class CauHinhHopDongTestSamples {
             .idDonVi(1L)
             .chieuDai(1L)
             .tienTo("tienTo1")
+            .phuongThucThanhToan("phuongThucThanhToan1")
+            .thongTinThem("thongTinThem1")
             .giaTri(1L)
             .hienThi("hienThi1")
             .trangThai(1L);
@@ -28,6 +30,8 @@ public class CauHinhHopDongTestSamples {
             .idDonVi(2L)
             .chieuDai(2L)
             .tienTo("tienTo2")
+            .phuongThucThanhToan("phuongThucThanhToan2")
+            .thongTinThem("thongTinThem2")
             .giaTri(2L)
             .hienThi("hienThi2")
             .trangThai(2L);
@@ -40,6 +44,8 @@ public class CauHinhHopDongTestSamples {
             .idDonVi(longCount.incrementAndGet())
             .chieuDai(longCount.incrementAndGet())
             .tienTo(UUID.randomUUID().toString())
+            .phuongThucThanhToan(UUID.randomUUID().toString())
+            .thongTinThem(UUID.randomUUID().toString())
             .giaTri(longCount.incrementAndGet())
             .hienThi(UUID.randomUUID().toString())
             .trangThai(longCount.incrementAndGet());
