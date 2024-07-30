@@ -11,6 +11,8 @@ import vn.vnpt.domain.DanhSachHopDong;
 import vn.vnpt.repository.DanhSachHopDongRepository;
 import vn.vnpt.service.dto.DanhSachHopDongDTO;
 import vn.vnpt.service.mapper.DanhSachHopDongMapper;
+import java.time.LocalDate;
+
 
 /**
  * Service Implementation for managing {@link vn.vnpt.domain.DanhSachHopDong}.
@@ -108,5 +110,11 @@ public class DanhSachHopDongService {
     public void delete(Long id) {
         log.debug("Request to delete DanhSachHopDong : {}", id);
         danhSachHopDongRepository.deleteById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public long countByIdDonViAndNgayLapHd(Long idDonVi, LocalDate ngayLapHd) {
+        log.debug("Request to count DanhSachHopDong by idDonVi : {} and ngayLapHd : {}", idDonVi, ngayLapHd);
+        return danhSachHopDongRepository.countByIdDonViAndNgayLapHd(idDonVi, ngayLapHd);
     }
 }

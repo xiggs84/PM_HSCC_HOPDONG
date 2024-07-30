@@ -21,6 +21,10 @@ import vn.vnpt.repository.DanhSachHopDongRepository;
 import vn.vnpt.service.DanhSachHopDongService;
 import vn.vnpt.service.dto.DanhSachHopDongDTO;
 import vn.vnpt.web.rest.errors.BadRequestAlertException;
+import java.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 /**
  * REST controller for managing {@link vn.vnpt.domain.DanhSachHopDong}.
@@ -176,5 +180,22 @@ public class DanhSachHopDongResource {
         return ResponseEntity.noContent()
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
             .build();
+    }
+
+    /**
+     * {@code GET  /danh-sach-hop-dongs/count} : get the count of danhSachHopDong by idDonVi and ngayLapHd.
+     *
+     * @param idDonVi the id of the DonVi.
+     * @param ngayLapHd the date of the contract.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the count, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/count")
+    public ResponseEntity<Long> countDanhSachHopDong(
+        @RequestParam(value = "idDonVi") Long idDonVi,
+        @RequestParam(value = "ngayLapHd") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate ngayLapHd
+    ) {
+        log.debug("REST request to count DanhSachHopDong by idDonVi : {} and ngayLapHd : {}", idDonVi, ngayLapHd);
+        long count = danhSachHopDongService.countByIdDonViAndNgayLapHd(idDonVi, ngayLapHd);
+        return ResponseEntity.ok().body(count);
     }
 }
