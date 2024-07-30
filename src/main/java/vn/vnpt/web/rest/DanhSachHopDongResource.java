@@ -198,4 +198,31 @@ public class DanhSachHopDongResource {
         long count = danhSachHopDongService.countByIdDonViAndNgayLapHd(idDonVi, ngayLapHd);
         return ResponseEntity.ok().body(count);
     }
+
+    @GetMapping("/api/countHopDongBetween")
+    public long countHopDongBetween(
+        @RequestParam(value = "idDonVi") Long idDonVi,
+        @RequestParam(value = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+        @RequestParam(value = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+        return danhSachHopDongService.countByIdDonViAndNgayLapHdBetween(idDonVi, startDate, endDate);
+    }
+
+    @GetMapping("/count-by-month")
+    public ResponseEntity<Long> countByMonth(
+        @RequestParam int month,
+        @RequestParam int year
+    ) {
+        Long count = danhSachHopDongService.countByMonth(month, year);
+        return ResponseEntity.ok().body(count);
+    }
+
+    @GetMapping("/count-by-month-and-idDonVi")
+    public ResponseEntity<Long> countByMonthAndIdDonVi(
+        @RequestParam int month,
+        @RequestParam int year,
+        @RequestParam Long idDonVi
+    ) {
+        Long count = danhSachHopDongService.countByMonthAndIdDonVi(month, year, idDonVi);
+        return ResponseEntity.ok().body(count);
+    }
 }

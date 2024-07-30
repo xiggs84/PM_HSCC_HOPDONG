@@ -117,4 +117,19 @@ public class DanhSachHopDongService {
         log.debug("Request to count DanhSachHopDong by idDonVi : {} and ngayLapHd : {}", idDonVi, ngayLapHd);
         return danhSachHopDongRepository.countByIdDonViAndNgayLapHd(idDonVi, ngayLapHd);
     }
+
+    @Transactional(readOnly = true)
+    public long countByIdDonViAndNgayLapHdBetween(Long idDonVi, LocalDate startDate, LocalDate endDate) {
+        return danhSachHopDongRepository.countByIdDonViAndNgayLapHdBetween(idDonVi, startDate, endDate);
+    }
+
+    @Transactional(readOnly = true)
+    public Long countByMonth(int month, int year) {
+        return danhSachHopDongRepository.countByMonth(month, year);
+    }
+
+    @Transactional(readOnly = true)
+    public Long countByMonthAndIdDonVi(int month, int year, Long idDonVi) {
+        return danhSachHopDongRepository.countByMonthAndIdDonVi(month, year, idDonVi);
+    }
 }
